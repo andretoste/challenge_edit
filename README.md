@@ -1,3 +1,4 @@
+HEAD
 # Startup Data Challenge - Insights Sustentáveis com Parquet
 
 ## Descrição do Projeto
@@ -59,3 +60,6 @@ bash streamlit run dashboard.py
 ### andre.toste@gmail.com
 
 ### https://github.com/andretoste
+=======
+# challenge_edit
+84ccc142325bf2a0d9c10eebeaa5b79de739a1b6
