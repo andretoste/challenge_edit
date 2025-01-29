@@ -4,6 +4,9 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from streamlit_chat import message
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+import numpy as np
 
 # Função para carregar os dados
 def carregar_dados():
@@ -56,7 +59,23 @@ def chatbot_response(df, question):
     else:
         return "Não entendi a sua pergunta. Tente algo como 'Qual o setor que mais consome energia?'"
 
+# Função para treinar o modelo preditivo
+def treinar_modelo(df):
+     df_model = df.copy()
+     df_model["id"] = range(len(df))
+     X = df_model[["id"]].values
+     y = df_model["energia_kwh"].values
+     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+     model = LinearRegression()
+     model.fit(X_train, y_train)
+     y_pred = model.predict(X_test)
+     y_pred = np.maximum(y_pred, 0)
+     df_pred = pd.DataFrame({"id": X_test.flatten(), "energia_kwh_prevista": y_pred})
+     df_pred = df_pred.sort_values("id")
+     df_pred["empresa"] = df_model.loc[df_pred["id"],"empresa"].values
+     df_pred["setor"] = df_model.loc[df_pred["id"],"setor"].values
 
+     return df_pred, y_test, X_test
 # Configurar a página
 st.set_page_config(page_title="Dashboard Sustentabilidade", layout="wide")
 
@@ -92,7 +111,6 @@ if prompt := st.sidebar.chat_input("Faça sua pergunta"):
   st.session_state.messages.append({"role": "assistant", "content": response})
   with st.sidebar.chat_message("assistant"):
       st.markdown(response)
-
 
 # Slider de Empresas
 n_top = st.slider("Top empresas", min_value=1, max_value=10, value=5)
@@ -140,3 +158,17 @@ with col2:
 with col3:
     st.subheader("CO2")
     st.dataframe(top_co2[['empresa','co2_emissoes']])
+
+# 3. Modelo Preditivo
+st.header("Modelo Preditivo")
+df_pred, y_test, X_test  = treinar_modelo(df)
+
+st.subheader("Previsões de Consumo de Energia")
+st.dataframe(df_pred[['empresa','setor','energia_kwh_prevista']].head())
+
+
+# Gráfico da Previsão com etiquetas
+st.subheader("Gráfico Previsão Consumo de Energia")
+fig_pred = px.line(df_pred.head(), x='empresa', y='energia_kwh_prevista', text='energia_kwh_prevista')
+fig_pred.update_traces(textposition='bottom right') # Move para baixo e direita. Pode-se escolher outras posições como 'top center' ou 'top right'
+st.plotly_chart(fig_pred, use_container_width=True)
