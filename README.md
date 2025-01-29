@@ -1,4 +1,3 @@
-HEAD
 # Startup Data Challenge - Insights Sustentáveis com Parquet
 
 ## Descrição do Projeto
@@ -16,43 +15,54 @@ Este projeto foi desenvolvido como parte do desafio final do bootcamp de DataOps
 ## Como Executar o Projeto
 
 1.  Certifique-se de ter o Python 3 instalado.
+
 2.  Instale as bibliotecas necessárias: `pandas`, `streamlit` e `matplotlib` (caso não tenha instalado).
-```bash
- pip install pandas streamlit matplotlib
- 
-Mova o arquivo dados_sensores_5000.parquet para a mesma pasta dos scripts.
+    ```bash
+    pip install pandas streamlit matplotlib
+    ```
 
-Execute o dashboard interativo:
-bash streamlit run dashboard.py
+3.  Mova o arquivo `dados_sensores_5000.parquet` para a mesma pasta dos scripts.
 
-O dashboard será aberto no seu navegador.
+4.  Execute o dashboard interativo:
+    ```bash
+    streamlit run dashboard.py
+    ```
 
-Funcionalidades
-Exploração de Dados: O arquivo exploracao_dados.py permite analisar a estrutura dos dados do arquivo Parquet.
+5.  O dashboard será aberto no seu navegador.
 
-Análise e Geração de Insights: O arquivo analise_insights.py calcula métricas de consumo de energia, água e emissões de CO2 por setor, identifica as empresas com maior consumo e analisa a correlação entre as métricas.
+## Funcionalidades
 
-Dashboard Interativo: O arquivo dashboard.py cria um painel interativo usando Streamlit, onde o usuário pode visualizar o consumo por setor, as empresas com maior consumo e a correlação entre as métricas. O dashboard possui um filtro por setor.
+### Exploração de Dados: 
+O arquivo `exploracao_dados.py` permite analisar a estrutura dos dados.
 
-Insights Principais
-O setor de Varejo se destaca como o maior consumidor de energia, água e emissor de CO2, seguido de perto por Indústria.
+### Análise e Geração de Insights: 
+O arquivo `analise_insights.py` calcula métricas de consumo de energia, água e emissões de CO2 por setor, identifica as empresas com maior consumo e analisa a correlação entre as métricas.
 
-As empresas com maiores consumos variam em cada métrica (energia, água e CO2).
+### Dashboard Interativo: 
+O arquivo `dashboard.py` cria um painel interativo usando Streamlit, onde o usuário pode visualizar o consumo por setor, as empresas com maior consumo e a correlação entre as métricas. O dashboard possui um filtro por setor.
 
-A correlação entre as métricas é baixa.
+## Insights Principais
 
-Os insights e dados variam com o uso do filtro de setor.
+### O setor de Varejo se destaca como o maior consumidor de energia, água e emissor de CO2, seguido de perto por Indústria.
 
-Próximos Passos
-Implementar outras visualizações de dados.
+### As empresas com maiores consumos variam em cada métrica (energia, água e CO2).
 
-Adicionar outras métricas úteis para análise.
+### A correlação entre as métricas é baixa.
 
-Criar sistema de alerta para as empresas que ultrapassem limites sustentáveis.
+### Os insights e dados variam com o uso do filtro de setor.
 
-Contato
-André Toste
+## Próximos Passos
 
-andre.toste@gmail.com
+### Implementar outras visualizações de dados.
 
-https://github.com/andretoste
+### Adicionar outras métricas úteis para análise.
+
+### Criar sistema de alerta para as empresas que ultrapassem limites sustentáveis.
+
+## Contato
+
+### André Toste
+
+### <andre.toste@gmail.com>
+
+### [https://github.com/andretoste](https://github.com/andretoste)
