@@ -39,11 +39,11 @@ O arquivo `exploracao_dados.py` permite analisar a estrutura dos dados.
 O arquivo `analise_insights.py` calcula métricas de consumo de energia, água e emissões de CO2 por setor, identifica as empresas com maior consumo e analisa a correlação entre as métricas.
 
 ### Dashboard Interativo: 
-O arquivo `dashboard.py` cria um painel interativo usando Streamlit, onde o usuário pode visualizar o consumo por setor, as empresas com maior consumo e a correlação entre as métricas. O dashboard possui um filtro por setor.
+O arquivo `dashboard.py` cria um painel interativo usando Streamlit, onde o user pode visualizar o consumo por setor, as empresas com maior consumo e a correlação entre as métricas. O dashboard possui um filtro por setor.
 
 ## Insights Principais
 
-### O setor de Varejo se destaca como o maior consumidor de energia, água e emissor de CO2, seguido de perto por Indústria.
+### O setor de Varejo destaca-se como o maior consumidor de energia, água e emissor de CO2, seguido de perto por Indústria.
 
 ### As empresas com maiores consumos variam em cada métrica (energia, água e CO2).
 
@@ -59,7 +59,7 @@ O arquivo `dashboard.py` cria um painel interativo usando Streamlit, onde o usu�
 
 ### Criar sistema de alerta para as empresas que ultrapassem limites sustentáveis.
 
-## Contato
+## Contacto
 
 ### André Toste
 
