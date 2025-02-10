@@ -69,4 +69,3 @@ O arquivo `dashboard.py` cria um painel interativo usando Streamlit, onde o user
 
 ### [https://github.com/andretoste](https://github.com/andretoste)
 
-*   **Link para o Dashboard:** (substitua com o link do seu deploy do streamlit)
