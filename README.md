@@ -39,7 +39,9 @@ O arquivo `exploracao_dados.py` permite analisar a estrutura dos dados.
 O arquivo `analise_insights.py` calcula métricas de consumo de energia, água e emissões de CO2 por setor, identifica as empresas com maior consumo e analisa a correlação entre as métricas.
 
 ### Dashboard Interativo: 
-O arquivo `dashboard.py` cria um painel interativo usando Streamlit, onde o user pode visualizar o consumo por setor, as empresas com maior consumo e a correlação entre as métricas. O dashboard possui um filtro por setor.
+O arquivo `dashboard.py` cria um painel interativo usando Streamlit, onde o user pode visualizar o consumo por setor, as empresas com maior consumo e a correlação entre as métricas. O dashboard possui um filtro por setor e um chatbot que responde a perguntas sobre os dados.
+
+*   **Chatbot:** O chatbot responde a perguntas como "Qual o setor que mais consome energia?", "Qual a empresa que mais consome água?" e "Qual a média de emissões de CO2?".
 
 ## Insights Principais
 
@@ -59,10 +61,12 @@ O arquivo `dashboard.py` cria um painel interativo usando Streamlit, onde o user
 
 ### Criar sistema de alerta para as empresas que ultrapassem limites sustentáveis.
 
-## Contacto
+## Contato
 
 ### André Toste
 
 ### <andre.toste@gmail.com>
 
 ### [https://github.com/andretoste](https://github.com/andretoste)
+
+*   **Link para o Dashboard:** (substitua com o link do seu deploy do streamlit)
